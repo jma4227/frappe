@@ -189,3 +189,7 @@ typings/
 # cypress
 cypress/screenshots
 cypress/videos
+
+#IntelliJ and PyCharm
+
+/.idea/
