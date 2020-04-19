@@ -32,7 +32,7 @@ def get_desktop_icons(user=None):
 
 	if not user_icons:
 		fields = ['module_name', 'hidden', 'label', 'link', 'type', 'icon', 'color', 'description', 'category',
-			'_doctype', '_report', 'idx', 'force_show', 'reverse', 'custom_', 'standard', 'blocked']
+			'_doctype', '_report', 'idx', 'force_show', 'reverse', 'custom', 'standard', 'blocked']
 
 		active_domains = frappe.get_active_domains()
 
@@ -155,7 +155,7 @@ def add_user_icon(_doctype, _report=None, label=None, link=None, type='link', st
 				'color': userdefined_icon.color or module_icon.color,
 				'reverse': module_icon.reverse,
 				'idx': idx + 1,
-				'custom_': 1,
+				'custom': 1,
 				'standard': standard
 			}).insert(ignore_permissions=True)
 			clear_desktop_icons_cache()
@@ -198,7 +198,7 @@ def set_desktop_icons(visible_list, ignore_duplicate=True):
 	if the desktop icon does not exist and the name is a DocType, then will create
 	an icon for the doctype'''
 
-	# clear all custom_ only if setup is not complete
+	# clear all custom only if setup is not complete
 	if not int(frappe.defaults.get_defaults().setup_complete or 0):
 		frappe.db.sql('delete from `tabDesktop Icon` where standard=0')
 

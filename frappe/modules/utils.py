@@ -27,7 +27,7 @@ def export_module_json(doc, is_standard, module):
 		return path
 
 def get_doc_module(module, doctype, name):
-	"""Get custom_ module for given document"""
+	"""Get custom module for given document"""
 	module_name = "{app}.{module}.{doctype}.{name}.{name}".format(
 			app = frappe.local.module_app[scrub(module)],
 			doctype = scrub(doctype),
@@ -62,12 +62,12 @@ def export_customizations(module, doctype, sync_on_migrate=0, with_permissions=0
 		custom['custom_perms'] = frappe.get_all('Custom DocPerm',
 			fields='*', filters={'parent': doctype})
 
-	# also update the custom_ fields and property setters for all child tables
+	# also update the custom fields and property setters for all child tables
 	for d in frappe.get_meta(doctype).get_table_fields():
 		export_customizations(module, d.options, sync_on_migrate, with_permissions)
 
 	if custom["custom_fields"] or custom["property_setters"] or custom["custom_perms"]:
-		folder_path = os.path.join(get_module_path(module), 'custom_')
+		folder_path = os.path.join(get_module_path(module), 'custom')
 		if not os.path.exists(folder_path):
 			os.makedirs(folder_path)
 
@@ -78,7 +78,7 @@ def export_customizations(module, doctype, sync_on_migrate=0, with_permissions=0
 		frappe.msgprint(_('Customizations for <b>{0}</b> exported to:<br>{1}').format(doctype,path))
 
 def sync_customizations(app=None):
-	'''Sync custom_ fields and property setters from custom_ folder in each app module'''
+	'''Sync custom fields and property setters from custom folder in each app module'''
 
 	if app:
 		apps = [app]
@@ -87,7 +87,7 @@ def sync_customizations(app=None):
 
 	for app_name in apps:
 		for module_name in frappe.local.app_modules.get(app_name) or []:
-			folder = frappe.get_app_path(app_name, module_name, 'custom_')
+			folder = frappe.get_app_path(app_name, module_name, 'custom')
 			if os.path.exists(folder):
 				for fname in os.listdir(folder):
 					with open(os.path.join(folder, fname), 'r') as f:

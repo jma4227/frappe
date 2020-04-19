@@ -122,7 +122,7 @@ def create_custom_field(doctype, df, ignore_validate=False):
 		custom_field.insert()
 
 def create_custom_fields(custom_fields, ignore_validate = False, update=True):
-	'''Add / update multiple custom_ fields
+	'''Add / update multiple custom fields
 
 	:param custom_fields: example `{'Sales Invoice': [dict(fieldname='test')]}`'''
 	for doctype, fields in custom_fields.items():

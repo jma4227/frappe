@@ -11,7 +11,7 @@ QUnit.test("test customize form", function(assert) {
 		() => cur_frm.set_value('doc_type', 'ToDo'),
 		() => frappe.timeout(2),
 		() => {
-			// find the status column as there may be other custom_ fields like
+			// find the status column as there may be other custom fields like
 			// kanban etc.
 			frappe.row_idx = 0;
 			cur_frm.doc.fields.every((d, i) => {

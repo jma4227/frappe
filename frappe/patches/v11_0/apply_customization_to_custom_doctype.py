@@ -2,15 +2,15 @@ import frappe
 from frappe.utils import cint
 
 # This patch aims to apply & delete all the customization
-# on custom_ doctypes done through customize form
+# on custom doctypes done through customize form
 
 # This is required because customize form in now blocked
-# for custom_ doctypes and user may not be able to
+# for custom doctypes and user may not be able to
 # see previous customization
 
 def execute():
 	custom_doctypes = frappe.get_all('DocType', filters={
-		'custom_': 1
+		'custom': 1
 	})
 
 	for doctype in custom_doctypes:

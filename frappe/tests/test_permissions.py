@@ -409,7 +409,7 @@ class TestPermissions(unittest.TestCase):
 
 		frappe.set_user("Administrator")
 
-		# creates a custom_ docperm with just read access
+		# creates a custom docperm with just read access
 		# now any user can read any blog post (but other rights are limited to the blog post owner)
 		add_permission('Blog Post', 'Blogger')
 		frappe.clear_cache(doctype="Blog Post")

@@ -156,7 +156,7 @@ class TestCustomizeForm(unittest.TestCase):
 		# don't allow for standard fields
 		self.assertEquals(d.get("fields", {"fieldname": "subject"})[0].allow_on_submit or 0, 0)
 
-		# allow for custom_ field
+		# allow for custom field
 		self.assertEqual(d.get("fields", {"fieldname": "test_custom_field"})[0].allow_on_submit, 1)
 
 	def test_title_field_pattern(self):

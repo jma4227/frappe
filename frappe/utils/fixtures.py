@@ -30,7 +30,7 @@ def sync_fixtures(app=None):
 	frappe.db.commit()
 
 def import_custom_scripts(app):
-	"""Import custom_ scripts from `[app]/fixtures/custom_scripts`"""
+	"""Import custom scripts from `[app]/fixtures/custom_scripts`"""
 	if os.path.exists(frappe.get_app_path(app, "fixtures", "custom_scripts")):
 		for fname in os.listdir(frappe.get_app_path(app, "fixtures", "custom_scripts")):
 			if fname.endswith(".js"):

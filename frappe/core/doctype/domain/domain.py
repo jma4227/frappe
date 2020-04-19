@@ -13,7 +13,7 @@ class Domain(Document):
 	with "Restricted" domains are imported during
 	installation or migration'''
 	def setup_domain(self):
-		'''Setup domain icons, permissions, custom_ fields etc.'''
+		'''Setup domain icons, permissions, custom fields etc.'''
 		self.setup_data()
 		self.setup_roles()
 		self.setup_properties()
@@ -28,7 +28,7 @@ class Domain(Document):
 			create_custom_fields(self.data.custom_fields)
 
 		if self.data.on_setup:
-			# custom_ on_setup method
+			# custom on_setup method
 			frappe.get_attr(self.data.on_setup)()
 
 	def remove_domain(self):

@@ -320,7 +320,7 @@ frappe.ui.form.Form = class FrappeForm {
 		}
 	}
 
-	// sets up the refresh event for custom_ buttons
+	// sets up the refresh event for custom buttons
 	// added via configuration
 	setup_doctype_actions() {
 		if (this.meta.actions) {
@@ -1087,7 +1087,7 @@ frappe.ui.form.Form = class FrappeForm {
 		this.custom_buttons = {};
 	}
 
-	//Remove specific custom_ button by button Label
+	//Remove specific custom button by button Label
 	remove_custom_button(label, group) {
 		this.page.remove_inner_button(label, group);
 	}
@@ -1461,7 +1461,7 @@ frappe.ui.form.Form = class FrappeForm {
 		}
 
 		if(this.custom_make_buttons && this.custom_make_buttons[doctype]) {
-			// custom_ buttons are translated and so are the keys
+			// custom buttons are translated and so are the keys
 			const key = __(this.custom_make_buttons[doctype]);
 			// if the button is present, then show make
 			return !!this.custom_buttons[key];

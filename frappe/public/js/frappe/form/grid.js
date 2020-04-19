@@ -862,10 +862,10 @@ export default class Grid {
 	}
 
 	add_custom_button(label, click) {
-		// add / unhide a custom_ button
+		// add / unhide a custom button
 		var btn = this.custom_buttons[label];
 		if (!btn) {
-			btn = $('<button class="btn btn-default btn-xs btn-custom_">' + label + '</button>')
+			btn = $('<button class="btn btn-default btn-xs btn-custom">' + label + '</button>')
 				.css('margin-right', '4px')
 				.prependTo(this.grid_buttons)
 				.on('click', click);
@@ -876,7 +876,7 @@ export default class Grid {
 	}
 
 	clear_custom_buttons() {
-		// hide all custom_ buttons
-		this.grid_buttons.find('.btn-custom_').addClass('hidden');
+		// hide all custom buttons
+		this.grid_buttons.find('.btn-custom').addClass('hidden');
 	}
 }

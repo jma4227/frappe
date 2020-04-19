@@ -303,7 +303,7 @@ def get_messages_for_app(app):
 	# workflow based on app.hooks.fixtures
 	messages.extend(get_messages_from_workflow(app_name=app))
 
-	# custom_ fields based on app.hooks.fixtures
+	# custom fields based on app.hooks.fixtures
 	messages.extend(get_messages_from_custom_fields(app_name=app))
 
 	# app_include_files

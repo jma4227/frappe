@@ -367,7 +367,7 @@ def create_nested_doctype():
 		'name': 'Nested DocType',
 		'module': 'Custom',
 		'is_tree': 1,
-		'custom_': 1,
+		'custom': 1,
 		'autoname': 'Prompt',
 		'fields': [
 			{'label': 'Description', 'fieldname': 'description'}

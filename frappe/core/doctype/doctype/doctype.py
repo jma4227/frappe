@@ -55,7 +55,7 @@ class DocType(Document):
 		- Check fieldnames (duplication etc)
 		- Clear permission table for child tables
 		- Add `amended_from` and `amended_by` if Amendable
-		- Add custom_ field `auto_repeat` if Repeatable"""
+		- Add custom field `auto_repeat` if Repeatable"""
 
 		self.check_developer_mode()
 
@@ -273,7 +273,7 @@ class DocType(Document):
 
 
 	def on_update(self):
-		"""Update database schema, make controller templates if `custom_` is not set and clear cache."""
+		"""Update database schema, make controller templates if `custom` is not set and clear cache."""
 		self.delete_duplicate_custom_fields()
 		try:
 			frappe.db.updatedb(self.name, Meta(self))
@@ -382,7 +382,7 @@ class DocType(Document):
 		if merge:
 			frappe.throw(_("DocType can not be merged"))
 
-		# Do not rename and move files and folders for custom_ doctype
+		# Do not rename and move files and folders for custom doctype
 		if not self.custom and not frappe.flags.in_test and not frappe.flags.in_patch:
 			self.rename_files_and_folders(old, new)
 
@@ -575,7 +575,7 @@ class DocType(Document):
 
 
 	def make_repeatable(self):
-		"""If allow_auto_repeat is set, add auto_repeat custom_ field."""
+		"""If allow_auto_repeat is set, add auto_repeat custom field."""
 		if self.allow_auto_repeat:
 			if not frappe.db.exists('Custom Field', {'fieldname': 'auto_repeat', 'dt': self.name}):
 				insert_after = self.fields[len(self.fields) - 1].fieldname
@@ -670,7 +670,7 @@ def validate_fields_for_doctype(doctype):
 	validate_fields(frappe.get_meta(doctype, cached=False))
 
 
-# this is separate because it is also called via custom_ field
+# this is separate because it is also called via custom field
 def validate_fields(meta):
 	"""Validate doctype fields. Checks
 	1. There are no illegal characters in fieldnames

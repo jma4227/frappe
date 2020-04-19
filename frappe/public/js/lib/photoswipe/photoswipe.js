@@ -3496,9 +3496,9 @@ var _historyUpdateTimeout,
 			params[pair[0]] = pair[1];
 		}
 		if(_options.galleryPIDs) {
-			// detect custom_ pid in hash and search for it among the items collection
+			// detect custom pid in hash and search for it among the items collection
 			var searchfor = params.pid;
-			params.pid = 0; // if custom_ pid cannot be found, fallback to the first item
+			params.pid = 0; // if custom pid cannot be found, fallback to the first item
 			for(i = 0; i < _items.length; i++) {
 				if(_items[i].pid === searchfor) {
 					params.pid = i;
@@ -3537,7 +3537,7 @@ var _historyUpdateTimeout,
 		var pid = (_currentItemIndex + 1);
 		var item = _getItemAt( _currentItemIndex );
 		if(item.hasOwnProperty('pid')) {
-			// carry forward any custom_ pid assigned to the item
+			// carry forward any custom pid assigned to the item
 			pid = item.pid;
 		}
 		var newHash = _initialHash + '&'  +  'gid=' + _options.galleryUID + '&' + 'pid=' + pid;

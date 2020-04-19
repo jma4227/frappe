@@ -28,7 +28,7 @@ _classes = {}
 
 def get_controller(doctype):
 	"""Returns the **class** object of the given DocType.
-	For `custom_` type, returns `frappe.model.document.Document`.
+	For `custom` type, returns `frappe.model.document.Document`.
 
 	:param doctype: DocType name as string."""
 	from frappe.model.document import Document
@@ -36,7 +36,7 @@ def get_controller(doctype):
 	global _classes
 
 	if not doctype in _classes:
-		module_name, custom = frappe.db.get_value("DocType", doctype, ("module", "custom_"), cache=True) \
+		module_name, custom = frappe.db.get_value("DocType", doctype, ("module", "custom"), cache=True) \
 			or ["Core", False]
 
 		if custom:

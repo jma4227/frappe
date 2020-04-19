@@ -152,7 +152,7 @@ frappe.ui.form.on("Customize Form Field", {
 		var row = frappe.get_doc(doctype, name);
 		if(!(row.is_custom_field || row.__islocal)) {
 			frappe.msgprint(__("Cannot delete standard field. You can hide it if you want"));
-			throw "cannot delete custom_ field";
+			throw "cannot delete custom field";
 		}
 	},
 	fields_add: function(frm, cdt, cdn) {

@@ -33,7 +33,7 @@ frappe.ui.form.on('Custom Field', {
 		}
 		var insert_after = frm.doc.insert_after || null;
 		return frappe.call({
-			method: 'frappe.custom_.doctype.custom_field.custom_field.get_fields_label',
+			method: 'frappe.custom.doctype.custom_field.custom_field.get_fields_label',
 			args: { doctype: frm.doc.dt, fieldname: frm.doc.fieldname },
 			callback: function(r) {
 				if(r) {

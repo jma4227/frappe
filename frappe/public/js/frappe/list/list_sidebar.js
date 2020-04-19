@@ -33,7 +33,7 @@ frappe.views.ListSidebar = class ListSidebar {
 		this.setup_list_group_by();
 
 		// do not remove
-		// used to trigger custom_ scripts
+		// used to trigger custom scripts
 		$(document).trigger('list_sidebar_setup');
 
 		if (this.list_view.list_view_settings && this.list_view.list_view_settings.disable_sidebar_stats) {

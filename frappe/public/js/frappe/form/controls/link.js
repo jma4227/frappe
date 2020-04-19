@@ -2,7 +2,7 @@
 // buttons
 // autocomplete
 // link validation
-// custom_ queries
+// custom queries
 // add_fetches
 import Awesomplete from 'awesomplete';
 
@@ -378,7 +378,7 @@ frappe.ui.form.ControlLink = frappe.ui.form.ControlData.extend({
 				if (filters) {
 					filters = set_nulls(filters);
 
-					// extend args for custom_ functions
+					// extend args for custom functions
 					$.extend(args, filters);
 
 					// add "filters" for standard query (search.py)
@@ -404,7 +404,7 @@ frappe.ui.form.ControlLink = frappe.ui.form.ControlData.extend({
 						this.translate_values = q.translate_values;
 					}
 
-					// extend args for custom_ functions
+					// extend args for custom functions
 					$.extend(args, q);
 
 					// add "filters" for standard query (search.py)

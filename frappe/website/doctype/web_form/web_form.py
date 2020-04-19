@@ -309,7 +309,7 @@ def get_context(context):
 		return parents
 
 	def set_web_form_module(self):
-		'''Get custom_ web form module if exists'''
+		'''Get custom web form module if exists'''
 		self.web_form_module = self.get_web_form_module()
 
 	def get_web_form_module(self):

@@ -463,7 +463,7 @@ def update_permission_property(doctype, role, permlevel, ptype, value=None, vali
 	return out
 
 def setup_custom_perms(parent):
-	'''if custom_ permssions are not setup for the current doctype, set them up'''
+	'''if custom permssions are not setup for the current doctype, set them up'''
 	if not frappe.db.exists('Custom DocPerm', dict(parent=parent)):
 		copy_perms(parent)
 		return True

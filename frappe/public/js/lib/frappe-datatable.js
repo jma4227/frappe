@@ -1307,7 +1307,7 @@ var DataTable = function () {
 
     this.options = Object.assign({}, _defaults2.default, options);
     this.options.headerDropdown = _defaults2.default.headerDropdown.concat(options.headerDropdown || []);
-    // custom_ user events
+    // custom user events
     this.events = Object.assign({}, _defaults2.default.events, options.events || {});
     this.fireEvent = this.fireEvent.bind(this);
 

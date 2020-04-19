@@ -3787,7 +3787,7 @@
     var history = new History($editable);
 
     this.initialize = function () {
-      // bind custom_ events
+      // bind custom events
       $editable.on('keydown', function (event) {
         if (event.keyCode === key.code.ENTER) {
           context.triggerEvent('enter', event);

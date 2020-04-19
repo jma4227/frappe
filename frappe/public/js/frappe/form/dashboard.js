@@ -33,8 +33,8 @@ frappe.ui.form.Dashboard = Class.extend({
 		this.stats_area.addClass('hidden')
 		this.stats_area_row.empty();
 
-		// clear custom_
-		this.wrapper.find('.custom_').remove();
+		// clear custom
+		this.wrapper.find('.custom').remove();
 	},
 	set_headline: function(html, color) {
 		this.frm.layout.show_message(html, color);
@@ -66,7 +66,7 @@ frappe.ui.form.Dashboard = Class.extend({
 	},
 
 	add_section: function(html) {
-		return $('<div class="form-dashboard-section custom_">'+html+'</div>').appendTo(this.wrapper);
+		return $('<div class="form-dashboard-section custom">'+html+'</div>').appendTo(this.wrapper);
 	},
 
 	add_progress: function(title, percent, message) {
