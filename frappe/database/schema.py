@@ -63,7 +63,7 @@ class DBTable:
 
 	def get_columns_from_docfields(self):
 		"""
-			get columns from docfields and custom fields
+			get columns from docfields and custom_ fields
 		"""
 		fields = self.meta.get_fieldnames_with_value(True)
 

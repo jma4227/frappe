@@ -1,10 +1,10 @@
 import 'cypress-file-upload';
 // ***********************************************
 // This example commands.js shows you how to
-// create various custom commands and overwrite
+// create various custom_ commands and overwrite
 // existing commands.
 //
-// For more comprehensive examples of custom
+// For more comprehensive examples of custom_
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************

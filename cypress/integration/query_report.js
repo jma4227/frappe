@@ -4,7 +4,7 @@ context('Query Report', () => {
 		cy.visit('/desk#workspace/Website');
 	});
 
-	it('add custom column in report', () => {
+	it('add custom_ column in report', () => {
 		cy.visit('/desk#query-report/Permitted Documents For User');
 
 		cy.get('div[class="page-form flex"]', {timeout: 60000}).should('have.length', 1).then(()=>{

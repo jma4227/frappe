@@ -262,7 +262,7 @@ def get_link_fields(doctype):
 			where
 				df.options=%s and df.fieldtype='Link'""", (doctype,), as_dict=1)
 
-		# add custom link fields list to link fields list
+		# add custom_ link fields list to link fields list
 		link_fields += custom_link_fields
 
 		# remove fields whose options have been changed using property setter
@@ -329,7 +329,7 @@ def get_select_fields(old, new):
 			df.dt != %s and df.fieldtype = 'Select' and
 			df.options like {0} """ .format(frappe.db.escape('%' + old + '%')), (new,), as_dict=1)
 
-	# add custom link fields list to link fields list
+	# add custom_ link fields list to link fields list
 	select_fields += custom_select_fields
 
 	# remove fields whose options have been changed using property setter

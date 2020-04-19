@@ -11,7 +11,7 @@ from frappe.model.document import Document
 
 class DataMigrationPlan(Document):
 	def on_update(self):
-		# update custom fields in mappings
+		# update custom_ fields in mappings
 		self.make_custom_fields_for_mappings()
 
 		if frappe.flags.in_import or frappe.flags.in_test:
@@ -50,7 +50,7 @@ class DataMigrationPlan(Document):
 			mapping.migration_id_field = fieldname
 			mapping.save()
 
-		# Create custom field in Deleted Document
+		# Create custom_ field in Deleted Document
 		create_custom_field('Deleted Document', df)
 		frappe.flags.ignore_in_install = False
 

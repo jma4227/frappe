@@ -16,7 +16,7 @@ class TestDocType(unittest.TestCase):
 		return frappe.get_doc({
 			"doctype": "DocType",
 			"module": "Core",
-			"custom": 1,
+			"custom_": 1,
 			"fields": [{
 				"label": "Some Field",
 				"fieldname": "some_fieldname",

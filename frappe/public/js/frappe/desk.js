@@ -613,7 +613,7 @@ frappe.get_module = function(m, default_module) {
 	if (!module._id) {
 		// links can have complex values that range beyond simple plain text names, and so do not make for robust IDs.
 		// an example from python: "link": r"javascript:eval('window.open(\'timetracking\', \'_self\')')"
-		// this snippet allows a module to open a custom html page in the same window.
+		// this snippet allows a module to open a custom_ html page in the same window.
 		module._id = module.module_name.toLowerCase();
 	}
 

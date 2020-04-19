@@ -248,7 +248,7 @@ def get_custom_reports_and_doctypes(module):
 	]
 
 def get_custom_doctype_list(module):
-	doctypes =  frappe.get_list("DocType", fields=["name"], filters={"custom": 1, "istable": 0, "module": module}, order_by="name", ignore_permissions=True)
+	doctypes =  frappe.get_list("DocType", fields=["name"], filters={"custom_": 1, "istable": 0, "module": module}, order_by="name", ignore_permissions=True)
 
 	out = []
 	for d in doctypes:

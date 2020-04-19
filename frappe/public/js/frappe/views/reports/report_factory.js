@@ -6,7 +6,7 @@ frappe.views.ReportFactory = class ReportFactory extends frappe.views.Factory {
 		const _route = ['List', route[1], 'Report'];
 
 		if (route[2]) {
-			// custom report
+			// custom_ report
 			_route.push(route[2]);
 		}
 

@@ -83,7 +83,7 @@ def create_doctype(name, fields):
 	frappe.get_doc({
 		"doctype": "DocType",
 		"module": "Core",
-		"custom": 1,
+		"custom_": 1,
 		"fields": fields,
 		"permissions": [{
 			"role": "System Manager",

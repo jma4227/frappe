@@ -361,7 +361,7 @@ class DataMigrationRun(Document):
 		data = self.get_deleted_local_data()
 
 		for d in data:
-			# Deleted Document also has a custom field for migration_id
+			# Deleted Document also has a custom_ field for migration_id
 			migration_id_value = d.get(mapping.migration_id_field)
 			# pre process before update
 			self.pre_process_doc(d)

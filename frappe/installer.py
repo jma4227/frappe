@@ -122,7 +122,7 @@ def remove_app(app_name, dry_run=False, yes=False):
 	"""Delete app and all linked to the app's module with the app."""
 
 	if not dry_run and not yes:
-		confirm = input("All doctypes (including custom), modules related to this app will be deleted. Are you sure you want to continue (y/n) ? ")
+		confirm = input("All doctypes (including custom_), modules related to this app will be deleted. Are you sure you want to continue (y/n) ? ")
 		if confirm!="y":
 			return
 

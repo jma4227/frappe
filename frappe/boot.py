@@ -114,7 +114,7 @@ def get_user_pages_or_reports(parent):
 	has_role = {}
 	column = get_column(parent)
 
-	# get pages or reports set on custom role
+	# get pages or reports set on custom_ role
 	pages_with_custom_roles = frappe.db.sql("""
 		select
 			`tabCustom Role`.{field} as name,

@@ -81,7 +81,7 @@ def set_property_setter(doctype, local_doc, original_doc):
 
 def make_custom_fields(doctype, local_doc, original_doc):
 	'''
-		check fields and create a custom field equivalent for non standard fields
+		check fields and create a custom_ field equivalent for non standard fields
 	'''
 	local_fields, original_fields = get_fields_dict(local_doc), get_fields_dict(original_doc)
 	local_fields = sorted(local_fields.items(), key=lambda x: x[1]['idx'])

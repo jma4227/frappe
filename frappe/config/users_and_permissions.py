@@ -45,7 +45,7 @@ def get_data():
 				{
 					"type": "doctype",
 					"name": "Role Permission for Page and Report",
-					"description": _("Set custom roles for page and report")
+					"description": _("Set custom_ roles for page and report")
 				},
 				{
 					"type": "report",

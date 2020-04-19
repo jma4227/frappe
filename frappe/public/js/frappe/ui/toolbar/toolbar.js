@@ -29,9 +29,9 @@ frappe.ui.toolbar.Toolbar = Class.extend({
 	},
 
 	bind_events: function() {
-		// clear all custom menus on page change
+		// clear all custom_ menus on page change
 		$(document).on("page-change", function() {
-			$("header .navbar .custom-menu").remove();
+			$("header .navbar .custom_-menu").remove();
 		});
 
 		//focus search-modal on show in mobile view
@@ -165,11 +165,11 @@ frappe.ui.toolbar.Toolbar = Class.extend({
 $.extend(frappe.ui.toolbar, {
 	add_dropdown_button: function(parent, label, click, icon) {
 		var menu = frappe.ui.toolbar.get_menu(parent);
-		if(menu.find("li:not(.custom-menu)").length && !menu.find(".divider").length) {
+		if(menu.find("li:not(.custom_-menu)").length && !menu.find(".divider").length) {
 			frappe.ui.toolbar.add_menu_divider(menu);
 		}
 
-		return $('<li class="custom-menu"><a><i class="fa-fw '
+		return $('<li class="custom_-menu"><a><i class="fa-fw '
 			+icon+'"></i> '+label+'</a></li>')
 			.insertBefore(menu.find(".divider"))
 			.find("a")
@@ -184,7 +184,7 @@ $.extend(frappe.ui.toolbar, {
 		menu = typeof menu == "string" ?
 			frappe.ui.toolbar.get_menu(menu) : menu;
 
-		$('<li class="divider custom-menu"></li>').prependTo(menu);
+		$('<li class="divider custom_-menu"></li>').prependTo(menu);
 	},
 	add_icon_link(route, icon, index, class_name) {
 		let parent_element = $(".navbar-right").get(0);

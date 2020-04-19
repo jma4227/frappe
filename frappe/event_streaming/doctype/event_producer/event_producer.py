@@ -79,7 +79,7 @@ class EventProducer(Document):
 		}
 
 	def create_custom_fields(self):
-		"""create custom field to store remote docname and remote site url"""
+		"""create custom_ field to store remote docname and remote site url"""
 		for entry in self.producer_doctypes:
 			if not entry.use_same_name:
 				if not frappe.db.exists('Custom Field', {'fieldname': 'remote_docname', 'dt': entry.ref_doctype}):
@@ -229,7 +229,7 @@ def set_insert(update, producer_site, event_producer):
 		doc.insert(set_name=update.docname, set_child_names=False)
 	else:
 		# if event consumer is not saving documents with the same name as the producer
-		# store the remote docname in a custom field for future updates
+		# store the remote docname in a custom_ field for future updates
 		local_doc = doc.insert(set_child_names=False)
 		set_custom_fields(local_doc, update.docname, event_producer)
 
@@ -445,6 +445,6 @@ def resync(update):
 
 
 def set_custom_fields(local_doc, remote_docname, remote_site_name):
-	"""sets custom field in doc for storing remote docname"""
+	"""sets custom_ field in doc for storing remote docname"""
 	frappe.db.set_value(local_doc.doctype, local_doc.name, 'remote_docname', remote_docname)
 	frappe.db.set_value(local_doc.doctype, local_doc.name, 'remote_site_name', remote_site_name)

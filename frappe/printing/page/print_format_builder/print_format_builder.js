@@ -171,7 +171,7 @@ frappe.PrintFormatBuilder = Class.extend({
 		var me = this;
 		this.page.sidebar.empty();
 
-		// prepend custom HTML field
+		// prepend custom_ HTML field
 		var fields = [this.get_custom_html_field()].concat(this.meta.fields);
 
 		$(frappe.render_template("print_format_builder_sidebar",
@@ -253,7 +253,7 @@ frappe.PrintFormatBuilder = Class.extend({
 					f.label = "Custom HTML";
 					f.fieldtype = "Custom HTML";
 
-					// set custom html id to map data properties later
+					// set custom_ html id to map data properties later
 					custom_html_count++;
 					f.custom_html_id = custom_html_count;
 					me.custom_html_dict[f.custom_html_id] = f
@@ -500,13 +500,13 @@ frappe.PrintFormatBuilder = Class.extend({
 		// set JQuery `data` for Custom HTML fields, since editing the HTML
 		// directly causes problem becuase of HTML reformatting
 		//
-		// this is based on a dummy attribute custom_html_id, since all custom html
+		// this is based on a dummy attribute custom_html_id, since all custom_ html
 		// fields have the same fieldname `_custom_html`
 		var me = this;
 		this.page.main.find('[data-fieldtype="Custom HTML"]').each(function() {
 			var fieldname = $(this).attr('data-fieldname');
 			var content = $($(this).find('.html-content')[0]);
-			var html = me.custom_html_dict[parseInt(content.attr('data-custom-html-id'))].options;
+			var html = me.custom_html_dict[parseInt(content.attr('data-custom_-html-id'))].options;
 			content.data('content', html);
 		})
 	},
@@ -775,7 +775,7 @@ frappe.PrintFormatBuilder = Class.extend({
 						});
 					}
 					if(fieldtype==="Custom HTML") {
-						// custom html as HTML field
+						// custom_ html as HTML field
 						df.fieldtype = "HTML";
 						df.options = $($this.find(".html-content")[0]).data('content');
 					}

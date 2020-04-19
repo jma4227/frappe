@@ -11,7 +11,7 @@ def execute():
 	for entry in frappe.get_all("Auto Repeat"):
 		doc = frappe.get_doc("Auto Repeat", entry.name)
 
-		#create custom field for allow auto repeat
+		#create custom_ field for allow auto repeat
 		fields = frappe.get_meta(doc.reference_doctype).fields
 		insert_after = fields[len(fields) - 1].fieldname
 		df = dict(fieldname="auto_repeat", label="Auto Repeat", fieldtype="Link", insert_after=insert_after,

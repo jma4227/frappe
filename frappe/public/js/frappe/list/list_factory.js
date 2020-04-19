@@ -20,7 +20,7 @@ frappe.views.ListFactory = class ListFactory extends frappe.views.Factory {
 				if (!view_class) view_class = frappe.views.ListView;
 
 				if (view_class && view_class.load_last_view && view_class.load_last_view()) {
-					// view can have custom routing logic
+					// view can have custom_ routing logic
 					return;
 				}
 

@@ -67,7 +67,7 @@ frappe.ui.form.LinkSelector = Class.extend({
 			this.target.set_custom_query(args);
 		}
 
-		// load custom query from grid
+		// load custom_ query from grid
 		if (this.target.is_grid && this.target.fieldinfo[this.fieldname]
 			&& this.target.fieldinfo[this.fieldname].get_query) {
 			$.extend(args,

@@ -111,11 +111,11 @@ class CustomizeForm(Document):
 				new_d[property] = d.get(property)
 			self.append("fields", new_d)
 
-		# load custom translation
+		# load custom_ translation
 		translation = self.get_name_translation()
 		self.label = translation.target_name if translation else ''
 
-		#If allow_auto_repeat is set, add auto_repeat custom field.
+		#If allow_auto_repeat is set, add auto_repeat custom_ field.
 		if self.allow_auto_repeat:
 			if not frappe.db.exists('Custom Field', {'fieldname': 'auto_repeat', 'dt': self.doc_type}):
 				insert_after = self.fields[len(self.fields) - 1].fieldname
@@ -131,7 +131,7 @@ class CustomizeForm(Document):
 			['name', 'target_name'], as_dict=True)
 
 	def set_name_translation(self):
-		'''Create, update custom translation for this doctype'''
+		'''Create, update custom_ translation for this doctype'''
 		current = self.get_name_translation()
 		if current:
 			if self.label and current.target_name != self.label:
@@ -280,7 +280,7 @@ class CustomizeForm(Document):
 		meta = frappe.get_meta(self.doc_type)
 		meta_df = meta.get("fields", {"fieldname": df.fieldname})
 		if not (meta_df and meta_df[0].get("is_custom_field")):
-			# not a custom field
+			# not a custom_ field
 			return
 
 		custom_field = frappe.get_doc("Custom Field", meta_df[0].name)

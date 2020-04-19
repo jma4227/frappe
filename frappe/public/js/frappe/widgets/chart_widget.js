@@ -491,7 +491,7 @@ export default class ChartWidget extends Widget {
 			.then(chart_doc => {
 				this.chart_doc = chart_doc;
 				if (this.chart_doc.chart_type == "Custom") {
-					// custom source
+					// custom_ source
 					if (
 						frappe.dashboards.chart_sources[this.chart_doc.source]
 					) {

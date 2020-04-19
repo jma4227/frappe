@@ -298,7 +298,7 @@ def extract_title(source, path):
 	return title
 
 def extract_comment_tag(source, tag):
-	'''Extract custom tags in comments from source.
+	'''Extract custom_ tags in comments from source.
 
 	:param source: raw template source in HTML
 	:param title: tag to search, example "title"

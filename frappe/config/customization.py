@@ -20,12 +20,12 @@ def get_data():
 				{
 					"type": "doctype",
 					"name": "Custom Script",
-					"description": _("Add custom javascript to forms.")
+					"description": _("Add custom_ javascript to forms.")
 				},
 				{
 					"type": "doctype",
 					"name": "DocType",
-					"description": _("Add custom forms.")
+					"description": _("Add custom_ forms.")
 				},
 			]
 		},

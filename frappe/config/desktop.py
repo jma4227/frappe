@@ -53,7 +53,7 @@ def get_data():
 			"reverse": 1,
 			"icon": "octicon octicon-settings",
 			"type": "module",
-			"description": "Customize forms, custom fields, scripts and translations."
+			"description": "Customize forms, custom_ fields, scripts and translations."
 		},
 		{
 			"module_name": "Integrations",

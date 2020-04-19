@@ -12,7 +12,7 @@ def get_custom_linked_doctype():
 	doc = frappe.get_doc({
 		"doctype": "DocType",
 		"module": "Core",
-		"custom": 1,
+		"custom_": 1,
 		"fields": [{
 			"label": "Test Field",
 			"fieldname": "test_field",

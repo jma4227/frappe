@@ -3,9 +3,9 @@ import frappe
 
 def execute():
 	frappe.reload_doc("core", "doctype", "docfield", force=True)
-	frappe.reload_doc("custom", "doctype", "custom_field", force=True)
-	frappe.reload_doc("custom", "doctype", "customize_form_field", force=True)
-	frappe.reload_doc("custom", "doctype", "property_setter", force=True)
+	frappe.reload_doc("custom_", "doctype", "custom_field", force=True)
+	frappe.reload_doc("custom_", "doctype", "customize_form_field", force=True)
+	frappe.reload_doc("custom_", "doctype", "property_setter", force=True)
 
 	frappe.db.sql('''
 		update `tabDocField`

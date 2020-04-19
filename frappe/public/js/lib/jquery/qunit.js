@@ -707,7 +707,7 @@
   	var reName = /^function (\w+)/,
   	    dump = {
 
-  		// The objType is used mostly internally, you can fix a (custom) type in advance
+  		// The objType is used mostly internally, you can fix a (custom_) type in advance
   		parse: function parse(obj, objType, stack) {
   			stack = stack || [];
   			var res,

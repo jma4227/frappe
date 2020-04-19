@@ -337,7 +337,7 @@ class Meta(Document):
 		if custom_fields:
 			newlist = []
 
-			# if custom field is at top
+			# if custom_ field is at top
 			# insert_after is false
 			for c in list(custom_fields):
 				if not c.insert_after:
@@ -359,7 +359,7 @@ class Meta(Document):
 				if not custom_fields:
 					break
 
-			# worst case, add remaining custom fields to last
+			# worst case, add remaining custom_ fields to last
 			if custom_fields:
 				newlist += custom_fields
 
@@ -578,7 +578,7 @@ def get_default_df(fieldname):
 
 def trim_tables(doctype=None):
 	"""
-	Removes database fields that don't exist in the doctype (json or custom field). This may be needed
+	Removes database fields that don't exist in the doctype (json or custom_ field). This may be needed
 	as maintenance since removing a field in a DocType doesn't automatically
 	delete the db field.
 	"""
